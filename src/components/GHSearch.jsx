@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import InfoList from './InfoList'
-import { Button, Input } from 'semantic-ui-react'
+import { Button, Input, Segment } from 'semantic-ui-react'
 import axios from 'axios'
 
 const GHSearch = () => {
@@ -22,9 +22,9 @@ const GHSearch = () => {
         <Button onClick={() => getUserData()} data-cy="submit" name="search">Search</Button>
       </section>
       {totalCount && (
-        <section data-cy="info-list">
+        <Segment>
           <InfoList items={items} totalCount={totalCount} />
-        </section>
+        </Segment>
       )}
     </>
   )
