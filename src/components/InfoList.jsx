@@ -5,18 +5,19 @@ const InfoList = ({ items, totalCount }) => {
 
   const infoList = items.map((item, i) => {
     return (
-      <Item key={i} data-cy={`user-${i}`} >
-        <Item.Content>
-          <Item.Meta data-cy="login">User: {item.login}</Item.Meta>
-          <Item.Meta data-cy="user-id">User Id: {item.id}</Item.Meta>
-          <Item.Meta data-cy="repos">
-            <a href={item.repos_url} _blank>Link to repos</a>
-          </Item.Meta>
-        </Item.Content>
-      </Item>
+      <Segment>
+        <Item key={i} data-cy={`user-${i}`} >
+          <Item.Content>
+            <Item.Meta data-cy="login">User: {item.login}</Item.Meta>
+            <Item.Meta data-cy="user-id">User Id: {item.id}</Item.Meta>
+            <Item.Meta >
+              <a data-cy="repos" href={item.repos_url} target="_blank">Link to repos</a>
+            </Item.Meta>
+          </Item.Content>
+        </Item>
+      </Segment>
     )
   })
-
   return (
     <div>
       <h4 data-cy="total-count" >Total hits: {totalCount}</h4>

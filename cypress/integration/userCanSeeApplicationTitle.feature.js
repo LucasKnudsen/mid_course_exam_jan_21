@@ -35,7 +35,7 @@ describe('Application main view', () => {
       cy.get('[data-cy="user-0"]').within(() => {
         cy.get('[data-cy="login"]').should('contain', 'barack')
         cy.get('[data-cy="user-id"]').should('contain', '681626')
-        cy.get('[data-cy="repos"]').should('have.attr', 'href')
+        cy.get('[data-cy="repos"]').should('have.attr', 'href', 'https://api.github.com/users/barack/repos')
       })
     })
   })
