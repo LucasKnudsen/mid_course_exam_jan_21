@@ -1,3 +1,10 @@
+## Workflow
+* Figure out API.
+* Stub out response for tests
+* Test existance of input field and submit button
+* Input field with onChange that sets state
+* Submit button that fires API call using the above state
+
 ## Midcourse Exam Challenge - GitHub User Search
 
 You are challenged with creating a feature that allows the users to search the GitHub registry of users.
@@ -14,7 +21,7 @@ You will fork this repository and then clone down the forked repository to your 
 - Postman: https://www.postman.com/
 
 ### Tests
-This repository has been equipped with Cypress for E2E tests. You will get extra scores for adding component tests (using Jest and Enzyme)
+This repository has been equipped with Cypress for E2E tests.
 
 To run the test suite, execute:
 ```
