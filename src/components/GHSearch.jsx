@@ -17,7 +17,7 @@ const GHSearch = () => {
       setItems(fiveFirst)
     }
     catch (error) {
-      setErrorMessage(error.message)
+      setErrorMessage("Couldn't connect to external server. Please try again later")
     }
   }
   // response.data.items

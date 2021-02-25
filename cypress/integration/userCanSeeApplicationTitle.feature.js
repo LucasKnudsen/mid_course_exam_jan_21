@@ -8,6 +8,8 @@ describe('Application main view', () => {
         response: 'fixture:search_fixture.json'
       })
       cy.visit('/')
+      cy.get('[data-cy="search-bar"]').type('barack')
+      cy.get('[data-cy="submit"]').click()
     });
 
     it('contains titel', () => {
@@ -24,14 +26,14 @@ describe('Application main view', () => {
     })
 
     it('displays the total count of hits upon submit', () => {
-      cy.get('[data-cy="search-bar"]').type('barack')
-      cy.get('[data-cy="submit"]').click()
       cy.get('[data-cy="total-count"]').should('contain', '163')
     })
 
+    it('displays the expected amount of user infos', () => {
+      cy.get('[data-cy="info-list"]').find('[data-cy="info-box"]').should('have.length', 3)
+    })
+
     it('displays a list of info upon submit', () => {
-      cy.get('[data-cy="search-bar"]').type('barack')
-      cy.get('[data-cy="submit"]').click()
       cy.get('[data-cy="info-list"]').within(() => {
         cy.get('[data-cy="user-0"]').within(() => {
           cy.get('[data-cy="login"]').should('contain', 'barack')
@@ -58,7 +60,7 @@ describe('Application main view', () => {
     it('displays an error message upon submit', () => {
       cy.get('[data-cy="search-bar"]').type('barack')
       cy.get('[data-cy="submit"]').click()
-      cy.get('[data-cy="error-message"]').should('contain', "Request failed with status code 500")
+      cy.get('[data-cy="error-message"]').should('contain', "Couldn't connect to external server. Please try again later")
     })
   })
 

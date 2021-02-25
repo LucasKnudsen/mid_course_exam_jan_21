@@ -5,7 +5,7 @@ const InfoList = ({ items, totalCount }) => {
 
   const infoList = items.map((item, i) => {
     return (
-      <Segment>
+      <Segment data-cy="info-box">
         <Item key={i} data-cy={`user-${i}`} >
           <Item.Content>
             <Item.Meta data-cy="login">User: {item.login}</Item.Meta>

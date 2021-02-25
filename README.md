@@ -1,10 +1,3 @@
-## Workflow
-* Figure out API.
-* Stub out response for tests
-* Test existance of input field and submit button
-* Input field with onChange that sets state
-* Submit button that fires API call using the above state
-
 ## Midcourse Exam Challenge - GitHub User Search
 
 You are challenged with creating a feature that allows the users to search the GitHub registry of users.
