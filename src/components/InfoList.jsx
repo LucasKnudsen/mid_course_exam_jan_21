@@ -11,7 +11,14 @@ const InfoList = ({ items, totalCount }) => {
             <Item.Meta data-cy="login">User: {item.login}</Item.Meta>
             <Item.Meta data-cy="user-id">User Id: {item.id}</Item.Meta>
             <Item.Meta >
-              <a data-cy="repos" href={item.repos_url} target="_blank">Link to repos</a>
+              <a
+                data-cy="repos"
+                href={item.repos_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Link to repos
+                </a>
             </Item.Meta>
           </Item.Content>
         </Item>
